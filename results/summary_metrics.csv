@@ -1,0 +1,2 @@
+total_samples,valid_rate,exact_match_rate,mean_tanimoto,mean_delta_atoms,mean_delta_bonds
+979,1.0,1.0,1.0,0.0,0.0
