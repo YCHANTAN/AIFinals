@@ -3,6 +3,23 @@ import random
 from rdkit import Chem
 from rdkit.Chem import AllChem, DataStructs
 import os
+import numpy as np
+import torch
+
+def set_seed(seed=42):
+    """
+    https://stackoverflow.com/questions/11526975/set-random-seed-programwide-in-python
+    """
+    random.seed(seed)
+    np.random.seed(seed)
+    try:
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+    except NameError:
+        pass
+
+set_seed(42)
 
 df = pd.read_csv("data/chembl_egfr_ic50.csv")
 
